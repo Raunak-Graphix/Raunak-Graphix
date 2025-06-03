@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raunak Graphix | Faceless Video Editor & Graphic Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <style>
+  @keyframes fade-in {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+</style>
+    
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+            --secondary-gradient: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+            --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .gradient-text {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-primary {
+            background: var(--primary-gradient);
+            transition: all 0.3s ease;
+            border: 2px solid;
+            border-radius: 9999px; /* Fully rounded */
+        }
+        
+        .btn-primary:hover {
+            background-color: white;
+            border: 2px solid;
+            border-radius: 9999px; /* Fully rounded */
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: white;
+            transition: all 0.3s ease;
+            border: 2px solid;
+            border-radius: 9999px; /* Fully rounded */
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary-gradient);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+        
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px) rotate(2deg);
+            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.2);
+        }
+        
+        .stat-card {
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out; /* 0.4s se 0.25s kar diya */
+    will-change: opacity, transform;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0s
+}
+        
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: linear-gradient(90deg, rgba(96, 165, 250, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%);
+        }
+        
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            background: var(--secondary-gradient);
+            transition: width 1.5s ease;
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .accordion-content.active {
+            max-height: 300px;
+        }
+        
+        .portfolio-filter button.active {
+            background: var(--primary-gradient);
+            color: white;
+        }
+        
+        .testimonial-card {
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.2);
+        }
+        
+        .form-input:focus + .form-label,
+        .form-input:not(:placeholder-shown) + .form-label {
+            transform: translateY(-35px) scale(0.9);
+            color: #0062ff;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        .pulse {
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes wave {
+            0% {
+                transform: rotate(0deg);
+            }
+            10% {
+                transform: rotate(14deg);
+            }
+            20% {
+                transform: rotate(-8deg);
+            }
+            30% {
+                transform: rotate(14deg);
+            }
+            40% {
+                transform: rotate(-4deg);
+            }
+            50% {
+                transform: rotate(10deg);
+            }
+            60% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+        
+        .wave {
+            animation: wave 2.5s infinite;
+            transform-origin: 70% 70%;
+            display: inline-block;
+        }
+        
+        .hover-grow {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-grow:hover {
+            transform: scale(1.05);
+        }
+        
+        .glow {
+            box-shadow: 0 0 15px rgba(0, 98, 255, 0.3);
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .glow:hover {
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.5);
+        }
+        
+        .rotate-on-hover {
+            transition: transform 0.5s ease;
+        }
+        
+        .rotate-on-hover:hover {
+            transform: rotate(5deg);
+        }
+        
+        .bounce {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-filter backdrop-blur-lg shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold gradient-text">Raunak Graphix</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#home" class="text-gray-700 hover:text-blue-600 px-3 py-2 font-medium transition hover-grow">Home</a>
+                        <a href="#about" class="text-gray-700 hover:text-blue-600 px-3 py-2 font-medium transition hover-grow">About</a>
+                        <a href="#services" class="text-gray-700 hover:text-blue-600 px-3 py-2 font-medium transition hover-grow">Services</a>
+                        <a href="#portfolio" class="text-gray-700 hover:text-blue-600 px-3 py-2 font-medium transition hover-grow">Portfolio</a>
+                        <a href="#testimonials" class="text-gray-700 hover:text-blue-600 px-3 py-2 font-medium transition hover-grow">Testimonials</a>
+                        <a href="#contact" class="text-gray-700 hover:text-blue-600 px-3 py-2 font-medium transition hover-grow">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-sky-50 opacity-90"></div>
+            <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-r from-transparent to-white opacity-30"></div>
+            <div class="absolute -bottom-20 -left-20 w-96 h-96 rounded-full bg-blue-200 opacity-40 filter blur-3xl"></div>
+            <div class="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-indigo-200 opacity-40 filter blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 fade-in">
+                        Crafting <span class="gradient-text">Visual Stories</span> That Move
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 max-w-lg fade-in" style="transition-delay: 0.2s">
+                        I transform ideas into captivating visual experiences through expert video editing and graphic design. Let's bring your vision to life.
+                    </p>
+                    <div class="flex flex-wrap gap-4 fade-in" style="transition-delay: 0.4s">
+                        <a href="#contact" class="btn-primary text-white font-medium px-8 py-3 rounded-full hover-grow">
+                            Get Started
+                        </a>
+                        <a href="#portfolio" class="btn-secondary text-blue-600 font-medium px-8 py-3 rounded-full hover-grow">
+                            View My Work
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <div class="glass-card rounded-2xl p-4 shadow-xl max-w-md mx-auto rotate-on-hover">
+                        <div class="relative aspect-video bg-gradient-to-br from-blue-100 to-indigo-100 rounded-xl overflow-hidden">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-20 h-20 bg-white bg-opacity-80 rounded-full flex items-center justify-center cursor-pointer hover:bg-opacity-100 transition pulse">
+                                    <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-play text-white text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-blue-100 opacity-70 filter blur-xl z-0"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-gradient-to-r from-blue-50 to-indigo-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="stat-card bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition text-center glow">
+                    <div class="text-4xl font-bold gradient-text mb-2">25+</div>
+                    <div class="text-gray-600">No. Of Cleints</div>
+                </div>
+                <div class="stat-card bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition text-center glow">
+                    <div class="text-4xl font-bold gradient-text mb-2">40+</div>
+                    <div class="text-gray-600">Projects Completed</div>
+                </div>
+                <div class="stat-card bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition text-center glow">
+                    <div class="text-4xl font-bold gradient-text mb-2">100+</div>
+                    <div class="text-gray-600">Videos Edited</div>
+                </div>
+                <div class="stat-card bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition text-center glow">
+                    <div class="text-4xl font-bold gradient-text mb-2">3+</div>
+                    <div class="text-gray-600">Years Of Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-in">About <span class="gradient-text">Me</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mb-6 fade-in"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto fade-in">
+                    I'm a passionate video editor and graphic designer specializing in creating faceless content that engages and converts. My approach combines technical expertise with creative storytelling.
+                </p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 mb-8 md:mb-0 fade-in">
+                    <div class="relative">
+                        <div class="w-full h-full bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl aspect-square"></div>
+                        <div class="absolute -bottom-6 -right-6 w-40 h-40 bg-gradient-to-r from-blue-200 to-indigo-200 rounded-2xl -z-10"></div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-6 fade-in">Why Choose <span class="gradient-text">My Services</span></h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4 fade-in" style="transition-delay: 0.2s">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover-grow">
+                                <i class="fas fa-bolt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Fast Turnaround</h4>
+                                <p class="text-gray-600">Efficient workflows ensure your projects are delivered on time without compromising quality.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4 fade-in" style="transition-delay: 0.3s">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 hover-grow">
+                                <i class="fas fa-users text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Client-Focused</h4>
+                                <p class="text-gray-600">Your vision is my priority. I work closely with clients to ensure their message shines through.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4 fade-in" style="transition-delay: 0.4s">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-sky-100 flex items-center justify-center text-sky-600 hover-grow">
+                                <i class="fas fa-lightbulb text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Creative Innovation</h4>
+                                <p class="text-gray-600">Staying ahead of trends to deliver fresh, engaging content that stands out.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4 fade-in" style="transition-delay: 0.5s">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 hover-grow">
+                                <i class="fas fa-headset text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Dedicated Support</h4>
+                                <p class="text-gray-600">Continued assistance even after project completion to ensure your complete satisfaction.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gradient-to-b from-white to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-in">My <span class="gradient-text">Services</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mb-6 fade-in"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto fade-in">
+                    Comprehensive video and design solutions tailored to your specific needs and goals.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition fade-in">
+                    <div class="h-48 bg-gradient-to-br from-blue-100 to-indigo-200 flex items-center justify-center">
+                        <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-lg hover-grow">
+                            <i class="fas fa-film text-3xl text-blue-600"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Video Editing</h3>
+                        <p class="text-gray-600 mb-4">Professional editing for YouTube videos, commercials, social media content, and more with seamless transitions and effects.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-3 py-1 bg-blue-100 text-blue-800 rounded-full">Premiere Pro</span>
+                            <span class="text-xs px-3 py-1 bg-blue-100 text-blue-800 rounded-full">After Effects</span>
+                            <span class="text-xs px-3 py-1 bg-blue-100 text-blue-800 rounded-full">DaVinci Resolve</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition fade-in" style="transition-delay: 0.1s">
+                    <div class="h-48 bg-gradient-to-br from-indigo-100 to-violet-200 flex items-center justify-center">
+                        <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-lg hover-grow">
+                            <i class="fas fa-photo-film text-3xl text-indigo-600"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Motion Graphics</h3>
+                        <p class="text-gray-600 mb-4">Eye-catching animations, kinetic typography, and dynamic infographics to make your content stand out.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full">After Effects</span>
+                            <span class="text-xs px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full">Blender</span>
+                            <span class="text-xs px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full">Cinema 4D</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition fade-in" style="transition-delay: 0.2s">
+                    <div class="h-48 bg-gradient-to-br from-sky-100 to-blue-200 flex items-center justify-center">
+                        <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-lg hover-grow">
+                            <i class="fas fa-mobile-screen text-3xl text-sky-600"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Short Form Content</h3>
+                        <p class="text-gray-600 mb-4">Engaging Reels, TikTok videos, and YouTube Shorts optimized for maximum reach and retention.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-3 py-1 bg-sky-100 text-sky-800 rounded-full">CapCut</span>
+                            <span class="text-xs px-3 py-1 bg-sky-100 text-sky-800 rounded-full">Premiere Rush</span>
+                            <span class="text-xs px-3 py-1 bg-sky-100 text-sky-800 rounded-full">InShot</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition fade-in" style="transition-delay: 0.3s">
+                    <div class="h-48 bg-gradient-to-br from-violet-100 to-purple-200 flex items-center justify-center">
+                        <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-lg hover-grow">
+                            <i class="fas fa-image text-3xl text-violet-600"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Thumbnail Design</h3>
+                        <p class="text-gray-600 mb-4">High-click-through-rate thumbnails designed to grab attention and drive views to your content.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-3 py-1 bg-violet-100 text-violet-800 rounded-full">Photoshop</span>
+                            <span class="text-xs px-3 py-1 bg-violet-100 text-violet-800 rounded-full">Canva</span>
+                            <span class="text-xs px-3 py-1 bg-violet-100 text-violet-800 rounded-full">Illustrator</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition fade-in" style="transition-delay: 0.4s">
+                    <div class="h-48 bg-gradient-to-br from-teal-100 to-emerald-200 flex items-center justify-center">
+                        <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-lg hover-grow">
+                            <i class="fas fa-bullhorn text-3xl text-teal-600"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Social Media Packages</h3>
+                        <p class="text-gray-600 mb-4">Complete content creation including videos, graphics, and captions tailored for your brand's social presence.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-3 py-1 bg-teal-100 text-teal-800 rounded-full">Content Strategy</span>
+                            <span class="text-xs px-3 py-1 bg-teal-100 text-teal-800 rounded-full">Scheduling</span>
+                            <span class="text-xs px-3 py-1 bg-teal-100 text-teal-800 rounded-full">Analytics</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition fade-in" style="transition-delay: 0.5s">
+                    <div class="h-48 bg-gradient-to-br from-blue-100 to-indigo-200 flex items-center justify-center">
+                        <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-lg hover-grow">
+                            <i class="fas fa-video text-3xl text-blue-600"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Faceless Content Creation</h3>
+                        <p class="text-gray-600 mb-4">Complete production of engaging faceless videos including scripting, voiceover, and editing.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-3 py-1 bg-blue-100 text-blue-800 rounded-full">Scriptwriting</span>
+                            <span class="text-xs px-3 py-1 bg-blue-100 text-blue-800 rounded-full">Stock Footage</span>
+                            <span class="text-xs px-3 py-1 bg-blue-100 text-blue-800 rounded-full">AI Tools</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-in">My <span class="gradient-text">Portfolio</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mb-6 fade-in"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto fade-in">
+                    A selection of my recent work across various industries and content types.
+                </p>
+            </div>
+            
+            <div class="portfolio-filter mb-8 flex flex-wrap justify-center gap-3 fade-in">
+                <button class="px-4 py-2 rounded-full border border-gray-200 text-sm font-medium transition active hover-grow">All</button>
+                <button class="px-4 py-2 rounded-full border border-gray-200 text-sm font-medium transition hover-grow">Video Editing</button>
+                <button class="px-4 py-2 rounded-full border border-gray-200 text-sm font-medium transition hover-grow">Motion Graphics</button>
+                <button class="px-4 py-2 rounded-full border border-gray-200 text-sm font-medium transition hover-grow">Short Form</button>
+                <button class="px-4 py-2 rounded-full border border-gray-200 text-sm font-medium transition hover-grow">Thumbnails</button>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item rounded-xl overflow-hidden shadow-md hover:shadow-lg transition relative group fade-in">
+                    <div class="aspect-video bg-gradient-to-br from-blue-100 to-indigo-100 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                            <button class="px-6 py-3 bg-white text-blue-600 font-medium rounded-full hover:bg-blue-600 hover:text-white transition hover-grow">
+                                View Project
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Fitness App Promo</h3>
+                        <p class="text-gray-600 text-sm">Video Editing • Motion Graphics</p>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item rounded-xl overflow-hidden shadow-md hover:shadow-lg transition relative group fade-in" style="transition-delay: 0.1s">
+                    <div class="aspect-video bg-gradient-to-br from-indigo-100 to-violet-100 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                            <button class="px-6 py-3 bg-white text-blue-600 font-medium rounded-full hover:bg-blue-600 hover:text-white transition hover-grow">
+                                View Project
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Instagram Reel Series</h3>
+                        <p class="text-gray-600 text-sm">Short Form Content</p>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item rounded-xl overflow-hidden shadow-md hover:shadow-lg transition relative group fade-in" style="transition-delay: 0.2s">
+                    <div class="aspect-video bg-gradient-to-br from-sky-100 to-blue-100 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                            <button class="px-6 py-3 bg-white text-blue-600 font-medium rounded-full hover:bg-blue-600 hover:text-white transition hover-grow">
+                                View Project
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Corporate Explainer Video</h3>
+                        <p class="text-gray-600 text-sm">Motion Graphics • Animation</p>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item rounded-xl overflow-hidden shadow-md hover:shadow-lg transition relative group fade-in" style="transition-delay: 0.3s">
+                    <div class="aspect-video bg-gradient-to-br from-violet-100 to-purple-100 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                            <button class="px-6 py-3 bg-white text-blue-600 font-medium rounded-full hover:bg-blue-600 hover:text-white transition hover-grow">
+                                View Project
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">YouTube Thumbnail Pack</h3>
+                        <p class="text-gray-600 text-sm">Graphic Design</p>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 5 -->
+                <div class="portfolio-item rounded-xl overflow-hidden shadow-md hover:shadow-lg transition relative group fade-in" style="transition-delay: 0.4s">
+                    <div class="aspect-video bg-gradient-to-br from-teal-100 to-emerald-100 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                            <button class="px-6 py-3 bg-white text-blue-600 font-medium rounded-full hover:bg-blue-600 hover:text-white transition hover-grow">
+                                View Project
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Eco-Friendly Product Ad</h3>
+                        <p class="text-gray-600 text-sm">Video Editing • Color Grading</p>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 6 -->
+                <div class="portfolio-item rounded-xl overflow-hidden shadow-md hover:shadow-lg transition relative group fade-in" style="transition-delay: 0.5s">
+                    <div class="aspect-video bg-gradient-to-br from-blue-100 to-indigo-100 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                            <button class="px-6 py-3 bg-white text-blue-600 font-medium rounded-full hover:bg-blue-600 hover:text-white transition hover-grow">
+                                View Project
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Faceless YouTube Video</h3>
+                        <p class="text-gray-600 text-sm">Full Production</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 fade-in" style="transition-delay: 0.6s">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition hover-grow">
+                    View All Projects
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-20 bg-gradient-to-b from-blue-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-in">My <span class="gradient-text">Skills</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mb-6 fade-in"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto fade-in">
+                    Mastery of industry-standard tools and techniques to deliver exceptional results.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="fade-in">
+                    <h3 class="text-xl font-bold mb-6">Technical Skills</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Adobe Premiere Pro</span>
+                                <span class="text-blue-600 font-bold">90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">After Effects</span>
+                                <span class="text-blue-600 font-bold">95%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">DaVinci Resolve</span>
+                                <span class="text-blue-600 font-bold">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Photoshop</span>
+                                <span class="text-blue-600 font-bold">92%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Illustrator</span>
+                                <span class="text-blue-600 font-bold">80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in" style="transition-delay: 0.2s">
+                    <h3 class="text-xl font-bold mb-6">Tools & Technologies</h3>
+                    
+                    <div class="grid grid-cols-3 sm:grid-cols-4 gap-4">
+                        <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition hover-grow">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Adobe_Premiere_Pro_CC_icon.svg/1200px-Adobe_Premiere_Pro_CC_icon.svg.png" alt="Premiere Pro" class="h-12 w-12 object-contain mb-2">
+                            <span class="text-xs font-medium">Premiere Pro</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition hover-grow">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Adobe_After_Effects_CC_icon.svg/2101px-Adobe_After_Effects_CC_icon.svg.png" alt="After Effects" class="h-12 w-12 object-contain mb-2">
+                            <span class="text-xs font-medium">After Effects</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition hover-grow">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/2101px-Adobe_Photoshop_CC_icon.svg.png" alt="Photoshop" class="h-12 w-12 object-contain mb-2">
+                            <span class="text-xs font-medium">Photoshop</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition hover-grow">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/1200px-Adobe_Illustrator_CC_icon.svg.png" alt="Illustrator" class="h-12 w-12 object-contain mb-2">
+                            <span class="text-xs font-medium">Illustrator</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition hover-grow">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/DaVinci_Resolve_17_Logo.png/640px-DaVinci_Resolve_17_Logo.png" alt="DaVinci Resolve" class="h-12 w-12 object-contain mb-2">
+                            <span class="text-xs font-medium">DaVinci</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition hover-grow">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Instagram_Edits_2025.svg/640px-Instagram_Edits_2025.svg.png" alt="CapCut" class="h-12 w-12 object-contain mb-2">
+                            <span class="text-xs font-medium">CapCut</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition hover-grow">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Canva_icon_2021.svg/2048px-Canva_icon_2021.svg.png" alt="Canva" class="h-12 w-12 object-contain mb-2">
+                            <span class="text-xs font-medium">Canva</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition hover-grow">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Midjourney_Emblem.png/640px-Midjourney_Emblem.png" alt="Midjourney" class="h-12 w-12 object-contain mb-2">
+                            <span class="text-xs font-medium">Midjourney</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-in">Client <span class="gradient-text">Testimonials</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mb-6 fade-in"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto fade-in">
+                    Don't just take my word for it - here's what my clients have to say about working with me.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold mr-4 hover-grow">
+                            JD
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Fredinand Jenny.</h4>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Raunak transformed our boring corporate videos into engaging content that actually gets watched. His attention to detail and creative approach is unmatched."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition fade-in" style="transition-delay: 0.2s">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold mr-4 hover-grow">
+                            SM
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Saurabh Mishra.</h4>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Working with Raunak on our Instagram Reels has been a game-changer. Our engagement has doubled and he always delivers ahead of schedule."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition fade-in" style="transition-delay: 0.4s">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-sky-100 flex items-center justify-center text-sky-600 font-bold mr-4 hover-grow">
+                            AK
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Unlisted Tech.</h4>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "The thumbnails Raunak designed for my YouTube channel have increased my CTR by 60%. He understands exactly what makes people click."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gradient-to-b from-white to-blue-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-in">Frequently <span class="gradient-text">Asked Questions</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mb-6 fade-in"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto fade-in">
+                    Answers to common questions about my services and workflow.
+                </p>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden fade-in">
+                    <button class="faq-question w-full flex justify-between items-center p-6 text-left font-medium">
+                        <span>What's your typical turnaround time for a video edit?</span>
+                        <i class="fas fa-plus text-blue-600 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-600">
+                            Turnaround time depends on the project scope, but most standard edits (5-10 minute videos) are completed within 3-5 business days. Rush services are available for an additional fee.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden fade-in" style="transition-delay: 0.1s">
+                    <button class="faq-question w-full flex justify-between items-center p-6 text-left font-medium">
+                        <span>Do you offer revisions after delivery?</span>
+                        <i class="fas fa-plus text-blue-600 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-600">
+                            Yes, I include 2 rounds of revisions in all my packages. Additional revisions can be requested for a small fee. My goal is to ensure you're completely satisfied with the final product.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden fade-in" style="transition-delay: 0.2s">
+                    <button class="faq-question w-full flex justify-between items-center p-6 text-left font-medium">
+                        <span>What file formats do you deliver?</span>
+                        <i class="fas fa-plus text-blue-600 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-600">
+                            I can deliver in any standard format (MP4, MOV, AVI, etc.) optimized for your specific platform (YouTube, Instagram, etc.). Just let me know your preferences and I'll ensure the files are delivered accordingly.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden fade-in" style="transition-delay: 0.3s">
+                    <button class="faq-question w-full flex justify-between items-center p-6 text-left font-medium">
+                        <span>How do you handle source files and project backups?</span>
+                        <i class="fas fa-plus text-blue-600 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-600">
+                            All project files are stored securely for 90 days after delivery. If you need the source files or project files, I can provide them for an additional fee. I recommend keeping your own backups of final deliverables.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden fade-in" style="transition-delay: 0.4s">
+                    <button class="faq-question w-full flex justify-between items-center p-6 text-left font-medium">
+                        <span>What information do you need from me to start a project?</span>
+                        <i class="fas fa-plus text-blue-600 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-600">
+                            I'll need your raw footage, any specific branding guidelines, music preferences, and a clear brief about your goals for the video. The more details you can provide upfront, the better I can meet your expectations.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-in">Get In <span class="gradient-text">Touch</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mb-6 fade-in"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto fade-in">
+                    Ready to elevate your content? Let's discuss how I can help bring your vision to life.
+                </p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2 fade-in">
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-bold mb-6">Contact Us</h3>
+                        
+                        <form action="https://formspree.io/f/xvgroqkq" method="POST" class="space-y-6" id="contact-form">
+    <div class="relative">
+        <input type="text" name="name" id="name" required class="form-input w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-0 focus:ring-blue-500 focus:border-transparent" placeholder=" ">
+        <label for="name" class="form-label absolute left-4 top-3 text-gray-500 pointer-events-none transition-all duration-200">Your Name</label>
+    </div>
+
+    <div class="relative">
+        <input type="email" name="email" id="email" required class="form-input w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-0 focus:ring-blue-500 focus:border-transparent" placeholder=" ">
+        <label for="email" class="form-label absolute left-4 top-3 text-gray-500 pointer-events-none transition-all duration-200">Email Address</label>
+    </div>
+
+    <div class="relative">
+        <input type="text" name="subject" id="subject" required class="form-input w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-0 focus:ring-blue-500 focus:border-transparent" placeholder=" ">
+        <label for="subject" class="form-label absolute left-4 top-3 text-gray-500 pointer-events-none transition-all duration-200">Subject</label>
+    </div>
+
+    <div class="relative">
+        <textarea name="message" id="message" rows="5" required class="form-input w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-0 focus:ring-blue-500 focus:border-transparent" placeholder=" "></textarea>
+        <label for="message" class="form-label absolute left-4 top-3 text-gray-500 pointer-events-none transition-all duration-200">Your Message</label>
+    </div>
+
+    <!-- Blur Overlay + Center Modal -->
+<div id="blurOverlay" class="hidden fixed inset-0 z-40 backdrop-blur-sm bg-black/20"></div>
+
+<div id="thankYouModal" class="hidden fixed inset-0 z-50 flex items-center justify-center">
+  <div class="bg-white rounded-2xl p-8 max-w-md w-[90%] text-center shadow-2xl animate-fade-in z-50">
+    <h2 class="text-2xl font-bold text-green-600 mb-4">✅ Thank You!</h2>
+    <p class="text-gray-700 mb-6">Your message has been successfully sent. Our team will reply to you soon!</p>
+    <button onclick="closeModal()" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Close</button>
+  </div>
+</div>
+
+    <button type="submit" class="w-full btn-primary text-white font-medium px-6 py-3 rounded-full transition hover-grow">
+        Send Message
+    </button>
+</form>
+</div>
+</div>
+                
+                <div class="lg:w-1/2 fade-in" style="transition-delay: 0.2s">
+                    <div class="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-2xl p-8 shadow-lg h-full">
+                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                        <p class="text-gray-600 mb-8">
+                            Feel free to reach out through any of these channels. I typically respond within 24 hours.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4 hover-grow">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center text-blue-600">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Email</h4>
+                                    <a href="mailto:graphixraunak@gmail.com" class="text-gray-600 hover:text-blue-600 transition">graphixraunak@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4 hover-grow">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center text-green-600">
+                                    <i class="fab fa-whatsapp text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">WhatsApp</h4>
+                                    <a href="https://wa.me/9643964577" class="text-gray-600 hover:text-green-600 transition">+91 96439 64577</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4 hover-grow">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center text-pink-600">
+                                    <i class="fab fa-instagram text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Instagram</h4>
+                                    <a href="https://instagram.com/raunak.verma1" class="text-gray-600 hover:text-pink-600 transition">@raunak.verma1</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4 hover-grow">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center text-blue-600">
+                                    <i class="fab fa-linkedin-in text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">LinkedIn</h4>
+                                    <a href="https://linkedin.com/in/raunakverma" class="text-gray-600 hover:text-blue-600 transition">linkedin.com/in/raunakverma</a>
+                                </div>
+                            </div>
+                        </div>
+<br>
+                            <div class="bg-white rounded-lg p-2 shadow-sm">
+                                <div class="flex justify-between py-1 border-b border-gray-100">
+                                    <span class="text-gray-600">Monday - Saturday</span>
+                                    <span class="font-medium">9:00 AM - 6:00 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold gradient-text mb-4">Raunak Verma</h3>
+                    <p class="text-gray-400 mb-4">
+                        Crafting visuals that move and inspire.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition hover-grow">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition hover-grow">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition hover-grow">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition hover-grow">
+                            <i class="fab fa-behance text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="fade-in" style="transition-delay: 0.1s">
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition hover-grow">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition hover-grow">About</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition hover-grow">Services</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition hover-grow">Portfolio</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition hover-grow">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="fade-in" style="transition-delay: 0.2s">
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition hover-grow">Video Editing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition hover-grow">Motion Graphics</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition hover-grow">Short Form Content</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition hover-grow">Thumbnail Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition hover-grow">Faceless Content</a></li>
+                    </ul>
+                </div>
+                
+                <div class="fade-in" style="transition-delay: 0.3s">
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">
+                        Subscribe to get tips and updates on video editing and content creation.
+                    </p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full">
+                        <button type="submit" class="bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-2 rounded-r-lg hover:from-blue-700 hover:to-indigo-700 transition hover-grow">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center fade-in">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    &copy; 2025 Raunak Graphix. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition hover-grow">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition hover-grow">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:from-blue-700 hover:to-indigo-700 hover-grow">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+    
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+            const faqItem = button.closest('.faq-item');
+            const content = faqItem.querySelector('.accordion-content');
+            const icon = button.querySelector('i');
+            
+            content.classList.toggle('active');
+            icon.classList.toggle('fa-plus');
+            icon.classList.toggle('fa-minus');
+        });
+    });
+    
+    // Back to Top Button
+    const backToTopButton = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.remove('opacity-0', 'invisible');
+            backToTopButton.classList.add('opacity-100', 'visible');
+        } else {
+            backToTopButton.classList.remove('opacity-100', 'visible');
+            backToTopButton.classList.add('opacity-0', 'invisible');
+        }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    
+    // Portfolio Filter
+    const filterButtons = document.querySelectorAll('.portfolio-filter button');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            // Here you would filter the portfolio items in a real implementation
+        });
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Animate progress bars when scrolled into view
+    const progressBars = document.querySelectorAll('.progress-fill');
+    
+    function animateProgressBars() {
+        progressBars.forEach(bar => {
+            const percentage = bar.style.width;
+            bar.style.width = '0%';
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target); // once animated, stop observing to avoid repeat
+    }
+  });
+}, {
+  root: null,
+  rootMargin: '0px 0px -100px 0px', // Thoda pehle trigger kare jab element bottom se 100px pe aaye
+  threshold: 0.1
+});
+
+document.querySelectorAll('.fade-in').forEach(el => {
+  // Reset opacity for all elements initially (optional)
+  el.classList.remove('visible');
+  observer.observe(el);
+});           
+            observer.observe(bar.parentElement);
+        });
+    }
+    
+    // Progress bars animation (agar tumhara function ready hai toh use kar lena)
+  function animateProgressBars() {
+    // Progress bar animation logic yahan add karo
+  }
+
+  // Intersection Observer se fade-in animations setup karne ka function
+  function setupFadeInAnimations() {
+    const fadeInElements = document.querySelectorAll('.fade-in');
+
+    if (!('IntersectionObserver' in window)) {
+      // Agar browser Intersection Observer support nahi karta, toh turant visible kar do sab elements
+      fadeInElements.forEach(el => el.classList.add('visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          entry.target.style.transitionDelay = '0s'; // Scroll pe koi delay nahi chahiye
+          observer.unobserve(entry.target); // Animation ke baad observer hata do for better perf
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px 0px -50px 0px', // Thoda pehle trigger karo animation
+      threshold: 0.1
+    });
+
+    fadeInElements.forEach((el, index) => {
+      el.classList.remove('visible'); // Reset
+      el.style.transitionDelay = `${index * 0.1}s`; // Load time pe thoda stagger delay
+      observer.observe(el);
+    });
+  }
+
+  // Window load pe initialization
+  window.addEventListener('load', () => {
+    animateProgressBars();
+    setupFadeInAnimations();
+  });
+
+  // Hover grow effects (unchanged)
+  document.querySelectorAll('.hover-grow').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      el.style.transform = 'scale(1.05)';
+    });
+    el.addEventListener('mouseleave', () => {
+      el.style.transform = 'scale(1)';
+    });
+  });
+</script>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const modal = document.getElementById('thankYouModal');
+  const blur = document.getElementById('blurOverlay');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        modal.classList.remove('hidden');
+        blur.classList.remove('hidden');
+        form.reset();
+      } else {
+        alert("Something went wrong!");
+      }
+    } catch (err) {
+      alert("Network error!");
+    }
+  });
+
+  function closeModal() {
+    modal.classList.add('hidden');
+    blur.classList.add('hidden');
+  }
+</script>
+
+</body>
+</html>
